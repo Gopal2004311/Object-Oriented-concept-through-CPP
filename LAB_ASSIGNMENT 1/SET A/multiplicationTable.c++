@@ -1,18 +1,35 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
+class Reverse
+{
+public:
+    int n;
+
+public:
+    void getValue()
+    {
+        cout << "Enter a number:";
+        cin >> n;
+    }
+    int reverse()
+    {
+        int rev = 0;
+        while (n > 0)
+        {
+            int d = n % 10;
+            rev = rev * 10 + d;
+            n = n / 10;
+        }
+        return rev;
+    }
+};
 int main()
 {
-    int n;
-    cout << "Enter a number:";
-    cin >> n;
-    int i, result;
-    cout << "---The Multiplication Table---" << endl;
-    for (i = 1; i <= 10; i++)
-    {
-        result = n * i;
-        cout << result << endl;
-    }
+    cout << "the reverse is ";
+    Reverse R;
+    R.getValue();
+    cout << "the reverse number is " << R.reverse();
     getch();
     return 0;
 }
