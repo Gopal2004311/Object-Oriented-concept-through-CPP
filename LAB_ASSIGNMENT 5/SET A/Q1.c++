@@ -56,7 +56,7 @@ void Discount::display()
 
 int main()
 {
-    Discount *product[MAX];
+    Discount* product[MAX];
     int n;
     int Discount_In_Percentage;
     int Product_Id;

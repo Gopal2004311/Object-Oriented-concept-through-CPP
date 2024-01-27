@@ -21,7 +21,7 @@ public:
 
 public:
     MyNumber(int, int, int);
-    MyNumber(MyNumber &);
+    MyNumber(MyNumber&);
     void display();
 };
 MyNumber::MyNumber(int a, int b, int c)
@@ -42,7 +42,7 @@ Default::Default(int a = 10, int b = 20, int c = 30)
     this->b = b;
     this->c = c;
 }
-MyNumber::MyNumber(MyNumber &A)
+MyNumber::MyNumber(MyNumber& A)
 {
     this->a = A.a;
     this->b = A.b;
@@ -58,8 +58,8 @@ void MyNumber::display()
 int main()
 {
     Default object1;
-    cout<<"\n-----------------------------\n";
-    cout<<"\nThe default constrictor :\n";
+    cout << "\n-----------------------------\n";
+    cout << "\nThe default constrictor :\n";
     object1.display();
     cout << "\n-----------------------\n";
     MyNumber object2(10, 20, 30);

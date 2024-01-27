@@ -2,27 +2,36 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
-int perimeter(int, int);
-int area(int, int);
+class Rectangle
+{
+public:
+    int length, width;
+public:
+    void getValue()
+    {
+        cout << "Enter length of rectangle:";
+        cin >> length;
+        cout << "Enter width of rectangle:";
+        cin >> width;
+    }
+    int perimeter()
+    {
+        int p = (length + width) * 2;
+        return p;
+    }
+    int area()
+    {
+        int a = length * width;
+        return a;
+    }
+};
+
 int main()
 {
-    int length, width;
-    cout << "Enter length of rectangle:";
-    cin >> length;
-    cout << "Enter width of rectangle:";
-    cin >> width;
-    cout << "The Area of rectangle is " << area(length, width) << endl;
-    cout << "The perimeter of rectangle is " << perimeter(length, width) << endl;
+    Rectangle r;
+    r.getValue();
+    cout << "The Area of rectangle is " << r.area() << endl;
+    cout << "The perimeter of rectangle is " << r.perimeter() << endl;
     getch();
     return 0;
-}
-int perimeter(int length, int width)
-{
-    int p = (length + width) * 2;
-    return p;
-}
-int area(int length, int width)
-{
-    int a = length * width;
-    return a;
 }

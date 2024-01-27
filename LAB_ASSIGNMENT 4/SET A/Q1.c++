@@ -24,14 +24,14 @@ MyNumber::MyNumber(int a, int b, int c)
 void MyNumber::display()
 {
     this->average = ((this->a + this->b + this->c) / 3);
-    cout <<"Average:"<<this->average;
+    cout << "Average:" << this->average;
 }
 int main()
 {
-    cout<<"Enter three numbers:";
-    int n1,n2,n3;
-    cin>>n1>>n2>>n3;
-    MyNumber a(n1,n2,n3);
+    cout << "Enter three numbers:";
+    int n1, n2, n3;
+    cin >> n1 >> n2 >> n3;
+    MyNumber a(n1, n2, n3);
     a.display();
     getch();
     return 0;

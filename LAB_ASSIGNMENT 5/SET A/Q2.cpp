@@ -53,7 +53,7 @@ Borrower::Borrower()
     cout << "Enter customer name:";
     cin >> this->name;
     cout << "Enter customer phone no:";
-     cin >> this->phone;
+    cin >> this->phone;
     cout << "Enter account no:";
     cin >> this->acc_no;
     cout << "Enter balance:";
@@ -73,7 +73,7 @@ void Borrower::display()
 int main()
 {
     int n;
-    Borrower *customer[MAX];
+    Borrower* customer[MAX];
     cout << "Enter how many customer you want to store:";
     cin >> n;
     for (int i = 0; i < n; i++)

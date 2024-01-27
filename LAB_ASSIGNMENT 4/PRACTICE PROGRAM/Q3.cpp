@@ -8,7 +8,7 @@ using namespace std;
 class MyArray
 {
 public:
-    int *a;
+    int* a;
     int length;
 
 public:
@@ -45,7 +45,7 @@ MyArray::MyArray(int length)
 MyArray::~MyArray()
 {
     delete a;
-    cout<<"\ndestructor are called!!";
+    cout << "\ndestructor are called!!";
 }
 
 void MyArray::display()
