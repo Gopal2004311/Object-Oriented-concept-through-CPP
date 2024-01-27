@@ -1,21 +1,25 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
-int largest(int a, int b, int c)
+class Largest
 {
-    if (a > b && a > c)
+public:
+    int largest(int a, int b, int c)
     {
-        return a;
+        if (a > b && a > c)
+        {
+            return a;
+        }
+        else if (b > a && b > c)
+        {
+            return b;
+        }
+        else
+        {
+            return c;
+        }
     }
-    else if (b > a && b > c)
-    {
-        return b;
-    }
-    else
-    {
-        return c;
-    }
-}
+};
 
 int main()
 {
@@ -26,7 +30,8 @@ int main()
     cin >> q;
     cout << "Enter third number:";
     cin >> r;
-    cout<<"The Largest number is:"<<largest(p,q,r);
+    Largest l;
+    cout << "The Largest number is:" << l.largest(p, q, r);
     getch();
     return 0;
 }

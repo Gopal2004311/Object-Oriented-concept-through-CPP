@@ -1,25 +1,30 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
-int perfect(int n)
+class Perfect
 {
-    int i, result = 0;
-    for (i = 1; i <= n / 2; i++)
+public:
+    int perfect(int n)
     {
-        if (n % i == 0)
+        int i, result = 0;
+        for (i = 1; i <= n / 2; i++)
         {
-            result = result + i;
+            if (n % i == 0)
+            {
+                result = result + i;
+            }
         }
+        return (result == n) ? 1 : 0;
     }
-    return (result == n) ? 1 : 0;
-}
+};
 
 int main()
 {
     int n;
     cout << "Enter a Number:";
     cin >> n;
-    if (perfect(n))
+    Perfect p;
+    if (p.perfect(n))
     {
         cout << "The Number is perfect!!";
     }

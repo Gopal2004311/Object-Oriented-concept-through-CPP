@@ -1,7 +1,7 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
-class Reverse
+class Multiplication
 {
 public:
     int n;
@@ -12,24 +12,21 @@ public:
         cout << "Enter a number:";
         cin >> n;
     }
-    int reverse()
+    void display(int i = 1)
     {
-        int rev = 0;
-        while (n > 0)
+        if (i != 11)
         {
-            int d = n % 10;
-            rev = rev * 10 + d;
-            n = n / 10;
+            cout << n * i << endl;
+            display(i + 1);
         }
-        return rev;
     }
 };
 int main()
 {
-    cout << "the reverse is ";
-    Reverse R;
-    R.getValue();
-    cout << "the reverse number is " << R.reverse();
+    Multiplication m;
+    m.getValue();
+    cout << "---The Multiplication Table---" << endl;
+    m.display();
     getch();
     return 0;
 }

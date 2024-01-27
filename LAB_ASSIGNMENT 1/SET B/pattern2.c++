@@ -1,20 +1,17 @@
-/*  *
- **
- ***
- *****
- */
 #include <iostream>
 #include <conio.h>
 using namespace std;
-int main()
+class Pattern
 {
-    int i, j;
-    cout << "Enter size of pattern:";
+    public:
+    void display()
+    {
+     cout << "Enter size of pattern:";
     int n;
     cin >> n;
-    for (i = n; i >= 0; i--)
+    for (int i = n; i >= 0; i--)
     {
-        for (j = 0; j < i; j++)
+        for (int j = 0; j < i; j++)
         {
             cout << "\t*";
         }
@@ -26,6 +23,12 @@ int main()
          ****
          */
     }
+    }
+};
+int main()
+{
+    Pattern p;
+    p.display();
     getch();
     return 0;
 }
