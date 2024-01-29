@@ -9,24 +9,24 @@
 using namespace std;
 class Pattern
 {
-    public:
+public:
     int n;
-    public:
-   void display()
-   {
-    char ch = 'A';
-     cout << "Enter size of pattern:";
-    cin >> n;
-    for (int i = 0; i < n; i++)
+public:
+    void display()
     {
-        for (int j = 0; j < i; j++)
+        char ch = 'A';
+        cout << "Enter size of pattern:";
+        cin >> n;
+        for (int i = 0; i < n; i++)
         {
-            cout << ch << "\t";
-            ch++;
+            for (int j = 0; j < i; j++)
+            {
+                cout << ch << "\t";
+                ch++;
+            }
+            cout << "\n";
         }
-        cout << "\n";
     }
-   }
 };
 int main()
 {

@@ -1,16 +1,20 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
-int main()
+class Series
 {
-    int i, n;
-    cout << "Enter terms:";
-    cin >> n;
+public:
     int result = 0;
-    for (i = 1; i <= n; i++)
+public:
+    void display(int);
+    void displayResult();
+};
+void Series::display(int n)
+{
+    for (int i = 1; i <= n; i++)
     {
         result = result + (i * i);
-         if (i == n)
+        if (i == n)
         {
             cout << "(" << i << "*" << i << ")";
         }
@@ -19,8 +23,20 @@ int main()
             cout << "(" << i << "*" << i << ")+";
         }
     }
-    cout << "\n";
-    cout << "The result of above series:" << result;
+}
+
+void Series::displayResult()
+{
+    cout << "\n The result of above series:" << result;
+}
+int main()
+{
+    int n;
+    cout << "Enter terms:";
+    cin >> n;
+    Series s;
+    s.display(n);
+    s.displayResult();
     getch();
     return 0;
 }
