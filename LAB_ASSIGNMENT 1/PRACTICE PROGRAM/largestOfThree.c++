@@ -2,6 +2,7 @@
 #include <conio.h>
 using namespace std;
 class Largest
+<<<<<<< HEAD
 {
 public:
     int largest(int, int, int);
@@ -23,11 +24,26 @@ int main()
 }
 
 int Largest::largest(int a, int b, int c)
+=======
+>>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
 {
-    if (a > b && a > c)
+public:
+    int largest(int a, int b, int c)
     {
-        return a;
+        if (a > b && a > c)
+        {
+            return a;
+        }
+        else if (b > a && b > c)
+        {
+            return b;
+        }
+        else
+        {
+            return c;
+        }
     }
+<<<<<<< HEAD
     else if (b > a && b > c)
     {
         return b;
@@ -36,4 +52,21 @@ int Largest::largest(int a, int b, int c)
     {
         return c;
     }
+=======
+};
+
+int main()
+{
+    int p, q, r;
+    cout << "Enter first number:";
+    cin >> p;
+    cout << "Enter second number:";
+    cin >> q;
+    cout << "Enter third number:";
+    cin >> r;
+    Largest l;
+    cout << "The Largest number is:" << l.largest(p, q, r);
+    getch();
+    return 0;
+>>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
 }

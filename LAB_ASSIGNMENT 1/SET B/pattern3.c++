@@ -7,26 +7,34 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
-int main()
+class Pattern
 {
-    int i, j, k;
-    cout << "Enter size of pattern:";
+    public:
+    void display()
+    {
+     cout << "Enter size of pattern:";
     int n;
     cin >> n;
-    for (i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (j = 0; j < i; j++)
+        for (int j = 0; j < i; j++)
         {
             cout << " ";
         }
 
-        for (k = 0; k < 78; k++)
+        for (int k = 0; k < 78; k++)
         {
             cout << "\t*";
         }
 
         cout << "\n";
     }
+    }
+};
+int main()
+{
+    Pattern p;
+    p.display();
     getch();
     return 0;
 }

@@ -31,7 +31,7 @@ Product::Product(int id, char name[], int price, int qty)
 void Product::display()
 {
     cout << "\n-------------------------------------------------------\n"
-         << endl;
+        << endl;
     cout << "Product id:" << this->product_id << endl;
     cout << "Product name:" << this->name << endl;
     cout << "Product price:" << this->price << endl;
@@ -41,15 +41,15 @@ void Product::display()
 void Product::displayProductMaxPrice()
 {
     cout << "product id"
-         << " "
-         << "product name"
-         << " "
-         << "product price"
-         << " "
-         << "Quantity" << endl;
+        << " "
+        << "product name"
+        << " "
+        << "product price"
+        << " "
+        << "Quantity" << endl;
     cout << this->product_id << "            " << this->name << "           " << this->price << "          " << this->qty << endl;
     cout << "\n-------------------------------------------------------\n"
-         << endl;
+        << endl;
 }
 
 int main()
@@ -57,7 +57,7 @@ int main()
     int n;
     cout << "Enter how many products are you add:";
     cin >> n;
-    Product *p[MAX];
+    Product* p[MAX];
     int i;
     int product_id;
     char name[30];

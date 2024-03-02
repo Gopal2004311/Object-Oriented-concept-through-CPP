@@ -27,11 +27,19 @@ int main()
     Prime p;
     if (p.prime(n))
     {
+<<<<<<< HEAD
         cout <<n<<" is prime!!";
     }
     else
     {
         cout <<n<<" is not prime!!";
+=======
+        cout << "Number is prime!!";
+    }
+    else
+    {
+        cout << "Number is not prime!!";
+>>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
     }
     getch();
     return 0;

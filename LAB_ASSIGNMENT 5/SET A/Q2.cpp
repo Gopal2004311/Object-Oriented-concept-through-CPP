@@ -69,12 +69,27 @@ public:
 
 Borrower::Borrower()
 {
+<<<<<<< HEAD
     acceptCustomer();
     acceptDep();
     cout << "\nEnter loan no.:";
     cin >> loan_no;
     cout << "\nEnter loan amount:";
     cin >> loan_amt;
+=======
+    cout << "Enter customer name:";
+    cin >> this->name;
+    cout << "Enter customer phone no:";
+    cin >> this->phone;
+    cout << "Enter account no:";
+    cin >> this->acc_no;
+    cout << "Enter balance:";
+    cin >> this->balance;
+    cout << "Enter loan no:";
+    cin >> this->loan_no;
+    cout << "Enter loan amount:";
+    cin >> this->loan_amount;
+>>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
 }
 
 void Borrower::display()
@@ -88,7 +103,12 @@ int main()
 {
     Borrower* c[max];
     int n;
+<<<<<<< HEAD
     cout << "\nEnter how many customers you want to store:";
+=======
+    Borrower* customer[MAX];
+    cout << "Enter how many customer you want to store:";
+>>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
     cin >> n;
     for (int i = 0;i < n;i++)
     {
