@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+.service-box {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 5%;
+    padding: 2%;
+    box-shadow: 1px 1px 7px rgb(124, 123, 123);
+}
+
+input,
+textarea {
+    display: block;
+}
+
+textarea {}

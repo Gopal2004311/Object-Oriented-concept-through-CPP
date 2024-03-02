@@ -8,179 +8,195 @@ iii.to display details of manager with designation as ”GeneralManger”.*/
 #include <iostream>
 #include <conio.h>
 #include <string.h>
-const int MAX = 50;
 using namespace std;
+
+//Employee is based class that start here
 class Employee
 {
-public:
-    int emp_code;
-    char emp_name[MAX];
-
-public:
-    void acceptEmployee(char[], int);
-    void displayEmployee();
-};
-
-void Employee::displayEmployee()
-{
-    cout << "Employee no:" << this->emp_code << endl;
-    cout << "Employee name:" << this->emp_name << endl;
-}
-void Employee::acceptEmployee(char emp_name[], int emp_code)
-{
-    strcpy(this->emp_name, emp_name);
-    this->emp_code = emp_code;
-}
-class Manager : public Employee
-{
 protected:
-    char designation[MAX];
-    int club_dues;
-
+    int emp_code;
+    char emp_name[max];
+protected:
+    void acceptEmp();
+    void displayEmp();
 public:
-    void acceptManager(char[], int);
-    void displayManager();
-    char getDes();
+    char getEmpName();
 };
 
-char Manager::getDes()
+void Employee::acceptEmp()
 {
-    return this->designation[0];
+    cout << "Enter employee no:" << endl;
+    cin >> emp_code;
+    cout << "Enter employee name:" << endl;
+    cin >> emp_name;
 }
+
+void Employee::displayEmp()
+{
+    cout << "The Employee no.:" << emp_code << endl;
+    cout << "The Employee name:" << emp_name << endl;
+}
+
+char Employee::getEmpName()
+{
+    return emp_name[0];
+}
+
+//manager is derived class of Employee,that are start here
+class Manager
+{
+    //Manager(designation, club_dues)
+protected:
+    int club_dues;
+    char designation[max];
+protected:
+    void getManager();
+    void displayManager();
+public:
+    char getManagerDes();
+};
+
+void Manager::getManager()
+{
+    cout << "Enter Employee designation:";
+    cin >> designation;
+    cout << "Enter Employee Club dues:";
+    cin >> club_dues;
+}
+
 void Manager::displayManager()
 {
-    cout << "Employee designation:" << this->designation << endl;
-    cout << "Employee club dues:" << this->club_dues << endl;
+    cout << "The Employee designation:" << designation << endl;
+    cout << "The Employee club dues:" << club_dues << endl;
 }
-void Manager::acceptManager(char designation[], int club_dues)
-{
-    strcpy(this->designation, designation);
-    this->club_dues = club_dues;
-}
-class Scientist : public Employee
-{
-protected:
-    char dept_name[MAX];
-    char publications[MAX];
 
-public:
-    void acceptScientist(char[], char[]);
+char Manager::getManagerDes()
+{
+    return designation[0];
+}
+
+//Scientist class start here,scientist is a derived class of Employee
+
+class Scientist :protected Employee
+{
+    //Scientist(dept_name, publications)
+
+protected:
+    char dept_name[max];
+    char publication[max];
+protected:
+    void getScientist();
     void displayScientist();
+public:
+    char getDept();
+    char getPublication();
 };
+
+void Scientist::getScientist()
+{
+    cout << "Enter Employee department name:";
+    cin >> dept_name;
+    cout << "Enter Publication:";
+    cin >> publication;
+}
 
 void Scientist::displayScientist()
 {
-    cout << "Employee department name:" << this->dept_name << endl;
-    cout << "publication:" << this->publications << endl;
+    cout << "The Employee department name:" << dept_name << endl;
+    cout << "The publication:" << publication << endl;
 }
-void Scientist::acceptScientist(char dept_name[], char publications[])
+
+char Scientist::getDept()
 {
-    strcpy(this->dept_name, dept_name);
-    strcpy(this->publications, publications);
+    return dept_name[0];
 }
-class Labourer : public Employee, public Scientist, public Manager
+
+char Scientist::getPublication()
+{
+    return publication[0];
+}
+//labourer is a derived class of employee that are start here
+class Labourer : private Scientist, public Manager
 {
 protected:
-    int Labourer_no;
-    char Labourer_name[MAX];
-
+    int l_no;
+    char l_name[max];
 public:
-    Labourer(int, char[], char[], char[], int, char[], char[], int);
-    void display();
-    void displayLabour();
+    void acceptAll();
+    void displayAll();
 };
 
-Labourer::Labourer(int Labourer_no, char Labourer_name[], char dept_name[], char publications[], int club_dues, char designation[], char emp_name[], int emp_code)
+void Labourer::acceptAll()
 {
-    this->acceptScientist(dept_name, publications);
-    this->acceptManager(designation, club_dues);
-   // this->acceptEmployee(emp_name, emp_code);
-    strcpy(this->Labourer_name, Labourer_name);
-    this->Labourer_no = Labourer_no;
+    acceptEmp();
+    getManager();
+    getScientist();
 }
 
-void Labourer::displayLabour()
+void Labourer::displayAll()
 {
-    cout << "Labour no:" << this->Labourer_no << endl;
-    cout << "Labour name:" << this->Labourer_name << endl;
-}
-void Labourer::display()
-{
-    this->displayManager();
-    this->displayScientist();
-   // this->displayEmployee();
-    this->displayLabour();
+    displayEmp();
+    displayManager();
+    displayScientist();
 }
 
 int main()
 {
-    int choice;
+    /*i. to accept the details of ‘n’employees
+     ii. to display the information
+     iii.to display details of manager with designation as ”GeneralManger”.*/
+    Labourer emp[max];
     int n;
-    Labourer *emp[MAX];
+    int choice;
     do
     {
-        cout << "\n-------------------------------\n";
-        cout << "1.accept employee details\n2.display employee information\n3.display manager with designation as general manager.\n";
-        cout << "----------------------------------\n";
+        cout << "\n-------------------------";
+        cout << "\n 1.Accept Employee Details\n2.display details\n3.display details of general manager" << endl;
+        cout << "\n---------------------------" << endl;
         cout << "Enter your choice:";
         cin >> choice;
-        int code, c, no;
-        char name[MAX], Labourer_name[MAX], des[MAX], pub[MAX], dept[MAX];
         switch (choice)
         {
         case 1:
-            cout << "Enter how many employee you want to store:";
+            cout << "\n Enter how many Employees you want to store:" << endl;
             cin >> n;
-            /*Employee(emp code, emp name)
-            Manager(designation, club_dues)
-            Scientist(dept_name, publications)
-            int Labourer_no;
-            char Labourer_name[MAX];*/
-            for (int i = 0; i < n; i++)
+            for (int i = 0;i < n;i++)
             {
-                cout << "Enter Employee code:";
-                cin >> code;
-                cout << "Enter employee name:";
-                cin >> name;
-                cout << "Enter designation:";
-                cin >> des;
-                cout << "Enter club dues:";
-                cin >> c;
-                cout << "Enter department name:";
-                cin >> dept;
-                cout << "Enter publication:";
-                cin >> pub;
-                cout << "Enter labour no:";
-                cin >> no;
-                cout << "Enter labour name:";
-                cin >> Labourer_name;
-
-                emp[i] = new Labourer(no, Labourer_name, dept, pub, c, des, name, code);
+                emp[i].acceptAll();
+                /*------or----
+                emp[i].acceptEmp();
+                emp[i].acceptManager();
+                emp[i].getScientist();*/
             }
             break;
-
         case 2:
-            cout << "Employee details!!" << endl;
-            for (int i = 0; i < n; i++)
+            cout << "\nThe Employee Details are following:" << endl;
+            for (int i = 0;i < n;i++)
             {
-                emp[i]->display();
+                emp[i].displayAll();
+                /*----------or--------*/
+                /*emp[i].displayEmp();
+                emp[i].displayManager();
+                emp[i].displayScientist();*/
             }
-            cout << "\n---------------------------------\n";
             break;
-
         case 3:
-            cout << "Employee as designation are general manager!!" << endl;
-            for (int i = 0; i < n; i++)
+            char temp[max];
+            cout << "\n The details of General Manager:" << endl;
+            for (int i = 0;i < n;i++)
             {
-                char temp[MAX];
-                temp[0] = emp[i]->getDes();
-                if (strcmp(temp,"general manager"))
+                temp[0] = emp[i].getManagerDes();
+                if (strcmp(temp, "general_manager") == 0)
                 {
-                    emp[i]->display();
+                    emp[i].displayAll();
                 }
             }
             break;
+        case 4:
+            cout << "Wrong input!!" << endl;
+            break;
         }
+
     } while (choice != 4);
     getch();
     return 0;

@@ -7,7 +7,7 @@ public:
     int result = 1, d, temp, temp1, count = 0, sum = 0;
 
 public:
-    int armstrong(int n)
+   int armstrong(int n)
     {
         temp = n, temp1 = n;
         while (n > 0)
@@ -28,14 +28,7 @@ public:
             temp = temp / 10;
         }
         cout << "the value of sum=" << sum << endl;
-        if (temp1 == sum)
-        {
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }
+        return (temp1 == sum) ? 1 : 0;
     }
 };
 int main()

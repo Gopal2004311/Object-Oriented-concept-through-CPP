@@ -41,7 +41,7 @@ void student::displayAverage()
 }
 int main()
 {
-    student *s[MAX];
+    student* s[MAX];
     int n;
     cout << "Enter how many student you want to store:";
     cin >> n;
@@ -55,7 +55,7 @@ int main()
         cin >> height;
         s[i] = new student(height, name);
     }
-    
+
     cout << "The student details are:" << endl;
     for (int i = 0; i < n; i++)
     {

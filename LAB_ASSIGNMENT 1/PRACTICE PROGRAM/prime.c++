@@ -1,31 +1,37 @@
 #include <iostream>
 #include <conio.h>
 using namespace std;
-int prime(int n)
+class Prime
 {
-    int i, flag = 0;
-    for (i = 2; i <= n / 2; i++)
+public:
+    int prime(int n)
     {
-        if (n % i == 0)
+        int i, flag = 0;
+        for (i = 2; i <= n / 2; i++)
         {
-            flag = 1;
-            break;
+            if (n % i == 0)
+            {
+                flag = 1;
+                break;
+            }
         }
+        return (flag == 0) ? 1 : 0;
     }
-    return (flag==0)?1:0;
-}
+};
 
 int main()
 {
     int n;
-    cout<<"Enter a number:";
-    cin>>n;
-    if(prime(n))
+    cout << "Enter a number:";
+    cin >> n;
+    Prime p;
+    if (p.prime(n))
     {
-        cout<<"Number is prime!!";
-    }else
+        cout <<n<<" is prime!!";
+    }
+    else
     {
-        cout<<"Number is not prime!!";
+        cout <<n<<" is not prime!!";
     }
     getch();
     return 0;

@@ -4,9 +4,6 @@ using namespace std;
 class Fact
 {
 public:
-    int n;
-
-public:
     int factorial(int num)
     {
         if (num == 1 || num == 0)
@@ -19,6 +16,7 @@ public:
         }
     }
 };
+
 int main()
 {
     Fact result;
