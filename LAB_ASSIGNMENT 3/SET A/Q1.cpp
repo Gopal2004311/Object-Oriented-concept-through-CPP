@@ -10,21 +10,21 @@ using namespace std;
 class Student
 {
 public:
-    static int roll_no;
-    static char name[MAX];
-    static char class1[MAX];
+    int roll_no;
+    char name[MAX];
+    char class1[MAX];
 
 public:
     Student(int, char[], char[]);
-    static void display();
-    static void displayCount();
+    void display();
+    void displayCount();
 };
 
-Student::Student(int roll_no, char name[], char class1[])
+Student::Student(int roll_no, char name[], char cl[])
 {
     this->roll_no = roll_no;
     strcpy(this->name, name);
-    strcpy(this->class1, class1);
+    strcpy(this->class1, cl);
     count++;
 }
 
