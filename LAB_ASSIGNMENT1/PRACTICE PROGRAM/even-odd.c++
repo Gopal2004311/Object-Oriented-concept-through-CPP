@@ -3,7 +3,11 @@
 using namespace std;
 class EvenOdd
 {
+<<<<<<< HEAD
     public:
+=======
+public:
+>>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
     int evenOdd(int n)
     {
         return (n % 2 == 0) ? 1 : 0;

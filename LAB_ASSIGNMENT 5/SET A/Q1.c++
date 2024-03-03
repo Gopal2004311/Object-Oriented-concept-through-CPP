@@ -88,7 +88,11 @@ void Discount::displayTotal()
 
 int main()
 {
+<<<<<<< HEAD
     Discount* product[max];
+=======
+    Discount* product[MAX];
+>>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
     int n;
     cout << "\nEnter how many product you want to purchase:";
     cin >> n;

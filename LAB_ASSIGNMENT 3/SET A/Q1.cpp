@@ -43,7 +43,7 @@ void Student::displayCount()
 int main()
 {
     int n;
-    Student *s[MAX];
+    Student* s[MAX];
     cout << "Enter size of array:";
     cin >> n;
     int roll_no;
@@ -60,7 +60,7 @@ int main()
         s[i] = new Student(roll_no, name, class1);
     }
 
-    for(int i=0;i<n;i++)
+    for (int i = 0;i < n;i++)
     {
         s[i]->display();
     }
