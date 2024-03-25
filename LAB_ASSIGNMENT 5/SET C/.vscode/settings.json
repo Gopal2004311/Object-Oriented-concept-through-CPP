@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.embeddedhtml": "html",
+    "tuple": "cpp",
+    "random": "cpp",
+    "array": "cpp",
+    "ostream": "cpp",
+    "iostream": "cpp",
+    "cctype": "cpp"
+  }
+}

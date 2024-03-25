@@ -18,7 +18,7 @@ public:
         {
             for (int j = 0; j < i; j++)
             {
-                cout << "  ";
+                cout << " ";
 
             }
             for (int j = i;j <= n;j++)

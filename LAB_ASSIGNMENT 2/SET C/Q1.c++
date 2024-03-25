@@ -1,10 +1,10 @@
 /*1. Create a C++ program to maintain inventory of a book having details Title, Authors[],
 Price, Publisher and Stock. Book can be sold, if stock is available, otherwise purchase will be
-made. Write a menu driven program to perform followingoperation:
-• Accept bookdetails.
-• Salea book. (Sale contains number of copies to be sold.)
+made. Write a menu driven program to perform following operation:
+• Accept book details.
+• Sale a book. (Sale contains number of copies to be sold.)
 • Purchase a book. (Purchase contains number of copies to be purchased)
-(Use dynamic memory allocation while accepting authordetails).*/
+(Use dynamic memory allocation while accepting author details).*/
 #include <iostream>
 #include <conio.h>
 #include <string.h>
@@ -12,7 +12,7 @@ made. Write a menu driven program to perform followingoperation:
 using namespace std;
 class Book
 {
-public:
+private:
     char title[MAX];
     char author[MAX];
     int price;
@@ -47,7 +47,7 @@ void Book::saleBook()
 
 void Book::purchaseBook(int stock)
 {
-    this->stock = stock;
+    this->stock = this->stock + stock;
 }
 
 void Book::display()
@@ -78,9 +78,10 @@ char Book::getTitle()
 }
 int main()
 {
-    int n, i = 0, flag;
+    int i = 0, flag;
     Book* b[MAX];
     int choice;
+    char temp[MAX];
     char title[MAX];
     char author[MAX];
     int price;
@@ -120,15 +121,16 @@ int main()
             cout << "\n-------------------------\n";
             for (int j = 0; j < i; j++)
             {
-                cout << b[j]->getTitle() << endl;
+                temp[0] = b[j]->getTitle();
+                cout << temp << endl;
             }
             cout << "\n-------------------------\n";
             cout << "Enter book title to be sold:";
-            char temp[MAX];
             cin >> temp;
             for (int j = 0; j < i; j++)
             {
-                if (strcmp(b[j]->title, temp) == 0)
+                title[0] = b[j]->getTitle();
+                if (strcmp(title, temp) == 0)
                 {
                     b[j]->saleBook();
                 }
@@ -140,7 +142,8 @@ int main()
             cout << "\n-------------------------\n";
             for (int j = 0; j < i; j++)
             {
-                cout << b[j]->getTitle() << endl;
+                temp[0] = b[j]->getTitle();
+                cout << temp << endl;
             }
             cout << "\n-------------------------\n";
             cout << "Book name and stock for purchase:";
@@ -148,7 +151,8 @@ int main()
             flag = 0;
             for (int j = 0; j < i; j++)
             {
-                if (strcmp(b[j]->title, temp) == 0)
+                title[0] = b[j]->getTitle();
+                if (strcmp(title, temp) == 0)
                 {
                     flag = 1;
                     b[j]->purchaseBook(stock);
@@ -165,7 +169,7 @@ int main()
             cout << "\n--------------------------------" << endl;
             for (int j = 0; j <= i; j++)
             {
-                b[i]->display();
+                b[j]->display();
             }
             break;
         }

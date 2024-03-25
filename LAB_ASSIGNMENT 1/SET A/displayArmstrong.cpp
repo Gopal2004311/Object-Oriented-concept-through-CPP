@@ -1,10 +1,11 @@
 #include <iostream>
 #include <conio.h>
+#include <math.h>
 using namespace std;
 class Armstrong
 {
 public:
-    int start, end;
+    unsigned long int start, end;
 
 public:
     void getValue()
@@ -16,35 +17,31 @@ public:
     }
     void displayArmstrong()
     {
-        int d, i;
-        int sum = 0, count = 0, result = 1;
-        int temp, temp1;
-        cout << "Total armstrong numbers within " << start << " to " << end << " is " << endl;
+        unsigned long int d, i;
+        unsigned long int sum = 0, count = 0;
+        unsigned long int temp;
+        cout << "Total armstrong numbers within " << start << " to " << end << " is :" << endl;
         for (i = start; i <= end; i++)
         {
-            temp = i, temp1 = i;
+            temp = i;
             sum = 0;
-            while (temp > 0)
+            while (temp)
             {
                 d = temp % 10;
                 count++;
                 temp = temp / 10;
             }
-            while (temp1 > 0)
+            temp = i;
+            while (temp)
             {
-                d = temp1 % 10;
-                for (int i = 1; i <= count; i++)
-                {
-                    result = result * d;
-                }
-                sum += result;
-                result = 1;
-                temp1 = temp1 / 10;
+                d = temp % 10;
+                sum += pow(d, count);
+                temp = temp / 10;
             }
             count = 0;
             if (i == sum)
             {
-                cout << "\t" << i;
+                cout << "\n" << i;
             }
         }
     }
@@ -52,7 +49,7 @@ public:
 int main()
 {
     Armstrong a;
-    a.getValue();
+    a.getValue();//a.start=10,a.end=2000;
     a.displayArmstrong();
     getch();
     return 0;

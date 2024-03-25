@@ -1,29 +1,51 @@
-#include<iostream>
+/*3. Write a C++ program to add two float numbers of two different classes using friend
+function.*/
+#include <iostream>
+#include <conio.h>
+#include <string.h>
 using namespace std;
-class a
+class second;
+class first
 {
-    float n1;
-    float n2;
-
 public:
-    void create(float a)
+    double a, addition;
+public:
+    void get()
     {
-        this->n1 = a;
+        cout << "Enter a number:";
+        cin >> a;
     }
-    void create(float a)
-    {
-        this->n2 = a;
-    }
-    friend class b;
+    friend void add(first&, second&);
 };
-class b
+class second
 {
 public:
-    friend class a;
- };
+    double b, addition;
+public:
+    void get()
+    {
+        cout << "Enter second number:";
+        cin >> b;
+    }
+    friend void add(first&, second&);
+};
 
+void add(first& a, second& b)
+{
+    cout << "Addition of two float numbers:";
+    a.addition = (a.a + b.b);
+    b.addition = (a.a + b.b);
+}
 int main()
 {
-    b ob;
-    
+    first f;
+    second s;
+    f.get();
+    s.get();
+    add(f, s);
+    cout << "Addition of two different class data members:" << endl;
+    cout << "in first :" << f.addition << endl;
+    cout << "in second :" << s.addition << endl;
+    getch();
+    return 0;
 }

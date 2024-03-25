@@ -35,12 +35,11 @@ MyNumber::MyNumber(int x, int y, int z)
 
 MyNumber::MyNumber(MyNumber& copy)
 {
-<<<<<<< HEAD
     cout << "The Copy constructor called" << endl;
     a = copy.a;
     b = copy.b;
     c = copy.c;
-=======
+
     this->a = a;
     this->b = b;
     this->c = c;
@@ -50,7 +49,6 @@ MyNumber::MyNumber(MyNumber& A)
     this->a = A.a;
     this->b = A.b;
     this->c = A.c;
->>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
 }
 
 void MyNumber::display()
@@ -59,15 +57,14 @@ void MyNumber::display()
 }
 int main()
 {
-<<<<<<< HEAD
+
     MyNumber ob1;            //default constructor called
     MyNumber ob2(10, 20, 30);//parametrized constructor called
     MyNumber ob3(ob1);       //copy constructor called
     ob1.display();
     ob2.display();
     ob3.display();
-=======
-    Default object1;
+    MyNumber object1;
     cout << "\n-----------------------------\n";
     cout << "\nThe default constrictor :\n";
     object1.display();
@@ -80,7 +77,7 @@ int main()
     cout << "\nThe Copy constructor:\n";
     object3.display();
     cout << "\n-----------------------\n";
->>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
+
     getch();
     return 0;
 }

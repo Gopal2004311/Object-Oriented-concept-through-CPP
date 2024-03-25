@@ -9,26 +9,26 @@
 using namespace std;
 class Pattern
 {
-    public:
+public:
     void display()
     {
-     cout << "Enter size of pattern:";
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < i; j++)
+        cout << "Enter size of pattern:";
+        int n;
+        cin >> n;
+        for (int i = 0; i < n; i++)
         {
-            cout << " ";
-        }
+            for (int j = 0; j < i; j++)
+            {
+                cout << " ";
+            }
 
-        for (int k = 0; k < 78; k++)
-        {
-            cout << "\t*";
-        }
+            for (int k = 0; k < 78; k++)
+            {
+                cout << "\t*";
+            }
 
-        cout << "\n";
-    }
+            cout << "\n";
+        }
     }
 };
 int main()

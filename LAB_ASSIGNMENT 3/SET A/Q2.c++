@@ -4,20 +4,19 @@ number of students and their heights are entered by user. (Use array of objects)
 #include <conio.h>
 #include <string.h>
 const int MAX = 50;
-int count = 0;
 using namespace std;
 class student
 {
 public:
     float height;
-    float average;
-    int sum = 0;
+    static float average;
+    static int sum;
+    static int count;
     char name[MAX];
 
 public:
     student(float, char[]);
     void display();
-    void displayAverage();
 };
 
 student::student(float height, char name[])
@@ -34,14 +33,11 @@ void student::display()
     cout << "The height of student:" << this->height << endl;
 }
 
-void student::displayAverage()
-{
-    average = (sum / count);
-    cout << "The Average height of the students in the class:" << average;
-}
 int main()
 {
     student* s[MAX];
+    student::count = 0;
+    student::sum = 0;
     int n;
     cout << "Enter how many student you want to store:";
     cin >> n;
@@ -63,7 +59,8 @@ int main()
         s[i]->display();
     }
     cout << "---------------------------\n";
-    s[0]->displayAverage();
+    student::average = student::sum / student::count;
+    cout << "The average:" << student::average;
     getch();
     return 0;
 }

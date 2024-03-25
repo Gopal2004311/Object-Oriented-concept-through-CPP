@@ -7,15 +7,16 @@ public:
     int result = 1, d, temp, temp1, count = 0, sum = 0;
 
 public:
-   int armstrong(int n)
+    int armstrong(int n)
     {
-        temp = n, temp1 = n;
-        while (n > 0)
+        temp = n;
+        while (temp > 0)
         {
-            d = n % 10;
+            d = temp % 10;
             count++;
-            n = n / 10;
+            temp = temp / 10;
         }
+        temp = n;
         while (temp > 0)
         {
             d = temp % 10;
@@ -28,13 +29,13 @@ public:
             temp = temp / 10;
         }
         cout << "the value of sum=" << sum << endl;
-        return (temp1 == sum) ? 1 : 0;
+        return (sum == n) ? 1 : 0;
     }
 };
 int main()
 {
     int n;
-    cout << "Enter intervals:";
+    cout << "Enter a number:";
     cin >> n;
     Armstrong A;
     if (A.armstrong(n))

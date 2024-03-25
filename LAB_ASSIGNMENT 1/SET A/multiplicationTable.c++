@@ -12,11 +12,7 @@ public:
         cout << "Enter a number:";
         cin >> n;
     }
-<<<<<<< HEAD
-   void display(int i = 1)
-=======
     void display(int i = 1)
->>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
     {
         if (i != 11)
         {

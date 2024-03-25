@@ -5,7 +5,6 @@ class Fibonacci
 {
 private:
     int n;
-
 public:
     void getNum()
     {
@@ -14,15 +13,13 @@ public:
     }
     void generate()
     {
-        int i, a = 0, b = 1, c;
-        cout << a << "\t";
-        cout << b << "\t";
-        for (i = 0; i < n - 2; i++)
+        int i, a = 0, b = 1, c = 0;
+        for (i = 0; i < n; i++)
         {
+            cout << c << "\t";
             c = a + b;
             a = b;
             b = c;
-            cout << c << "\t";
         }
     }
 };

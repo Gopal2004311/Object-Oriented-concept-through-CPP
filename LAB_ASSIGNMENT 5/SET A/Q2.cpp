@@ -2,124 +2,42 @@
 balance) from Customer. Again derive a class Borrower (loan-no, loan-amt) from
 Depositor. Write necessary member functions to read and display the details of ‘n’
 customers.*/
-#include <iostream>
-#include <conio.h>
-#include <string.h>
-using namespace std;
-class Customer
-{
-protected:
-    char name[max];
-    int phone[10];
-protected:
-    void acceptCustomer();
-    void displayCustomer();
-};
-
-void Customer::acceptCustomer()
-{
-    cout << "\nEnter Customer name:";
-    cin >> name;
-    cout << "\nEnter Customer phone:";
-    for (int i = 0;i < 10;i++)
-        cin >> phone[i];
-}
-
-void Customer::displayCustomer()
-{
-    cout << "\nThe Customer name:" << name;
-    cout << "\nThe Customer phone no.:";
-    for (int i = 0;i < 10;i++)
-        cout << phone[i];
-}
-class Depositor :public Customer
-{
-protected:
-    int account_no[12];
-    float balance;
-protected:
-    void acceptDep();
-    void displayDep();
-};
-void Depositor::acceptDep()
-{
-    cout << "\nEnter Account no.:";
-    for (int i = 0;i < 12;i++)
-        cin >> account_no[i];
-    cout << "\nEnter Balance:";
-    cin >> balance;
-}
-
-void Depositor::displayDep()
-{
-    cout << "\nThe Customer a/c no.:";
-    for (int i = 0;i < 12;i++)
-        cout << account_no[i];
-    cout << "\nThe Customer balance:" << balance;
-}
-class Borrower :public Depositor
-{
-protected:
-    int loan_no;
-    float loan_amt;
-public:
-    Borrower();
-    void display();
-};
-
-Borrower::Borrower()
-{
-<<<<<<< HEAD
-    acceptCustomer();
-    acceptDep();
-    cout << "\nEnter loan no.:";
-    cin >> loan_no;
-    cout << "\nEnter loan amount:";
-    cin >> loan_amt;
-=======
-    cout << "Enter customer name:";
-    cin >> this->name;
-    cout << "Enter customer phone no:";
-    cin >> this->phone;
-    cout << "Enter account no:";
-    cin >> this->acc_no;
-    cout << "Enter balance:";
-    cin >> this->balance;
-    cout << "Enter loan no:";
-    cin >> this->loan_no;
-    cout << "Enter loan amount:";
-    cin >> this->loan_amount;
->>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
-}
-
-void Borrower::display()
-{
-    displayCustomer();
-    displayDep();
-    cout << "\nThe Loan no.:" << loan_no;
-    cout << "\nThe Loan amount:" << loan_amt;
-}
+#include "Q2_customer.h"
 int main()
 {
+    char Name[max], mobile[10], accountNo[12];
+    int  loanNo;
+    double bankBalance, loan;
+
     Borrower* c[max];
     int n;
-<<<<<<< HEAD
-    cout << "\nEnter how many customers you want to store:";
-=======
-    Borrower* customer[MAX];
-    cout << "Enter how many customer you want to store:";
->>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
+    cout << "Enter size of array:";
     cin >> n;
     for (int i = 0;i < n;i++)
     {
-        c[i] = new Borrower();
+        cout << "Enter customer name:";
+        cin >> Name;
+        cout << "Enter mobile no.:";
+        cin >> mobile;
+        cout << "Enter Account no.:";
+        cin >> accountNo;
+        cout << "Enter bank balance:";
+        cin >> bankBalance;
+        cout << "Enter loan no.:";
+        cin >> loanNo;
+        cout << "Enter loan amount:";
+        cin >> loan;
+
+        c[i] = new Borrower(Name, mobile, accountNo, bankBalance, loan, loanNo);
     }
-    cout << "\n-----------------------------------------------" << endl;
-    cout << "----The Customer Details are----" << endl;
+
+    cout << endl;
+    cout << "---------Customer Details-------" << endl;
     for (int i = 0;i < n;i++)
     {
         c[i]->display();
+        //also use following
+        // c[i]->displayCustomer();
+        // c[i]->displayDeposit();
     }
-    getch();
-    return 0;
 }

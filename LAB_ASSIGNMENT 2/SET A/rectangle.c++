@@ -14,15 +14,17 @@ public:
         cout << "Enter width of rectangle:";
         cin >> width;
     }
-    int perimeter()
+    inline int perimeter()
     {
-        int p = (length + width) * 2;
-        return p;
+        // int p = (length + width) * 2;
+        // return p;
+        return ((length + width) * 2);
     }
-    int area()
+    inline int area()
     {
-        int a = length * width;
-        return a;
+        // int a = length * width;
+        // return a;
+        return (length * width);
     }
 };
 

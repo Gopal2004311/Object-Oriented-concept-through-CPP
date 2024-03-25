@@ -5,7 +5,7 @@
 using namespace std;
 class Employee
 {
-public:
+private:
     int emp_id;
     char name[50];
     char department[50];

@@ -5,19 +5,17 @@ also display count of students.(Use Static data member and Static member functio
 #include <conio.h>
 #include <string.h>
 #define MAX 50
-int count = 0;
 using namespace std;
 class Student
 {
-public:
     int roll_no;
     char name[MAX];
     char class1[MAX];
-
+public:
+    static int count;
 public:
     Student(int, char[], char[]);
     void display();
-    void displayCount();
 };
 
 Student::Student(int roll_no, char name[], char cl[])
@@ -35,14 +33,11 @@ void Student::display()
     cout << "Student class:" << class1 << endl;
 }
 
-void Student::displayCount()
-{
-    cout << "The total count of student :" << count << endl;
-}
 
 int main()
 {
     int n;
+    Student::count = 0;
     Student* s[MAX];
     cout << "Enter size of array:";
     cin >> n;
@@ -64,8 +59,7 @@ int main()
     {
         s[i]->display();
     }
-
-    s[0]->displayCount();
+    cout << "The total number of student are:" << Student::count << endl;
     getch();
     return 0;
 }

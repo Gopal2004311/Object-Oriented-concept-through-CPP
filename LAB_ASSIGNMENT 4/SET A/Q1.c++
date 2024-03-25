@@ -7,9 +7,7 @@ display average of given three numbers for all objects.*/
 using namespace std;
 class MyNumber
 {
-public:
-    int a, b, c, average = 0;
-
+    int a, b, c, average;
 public:
     MyNumber();
     MyNumber(int, int, int);
@@ -33,29 +31,16 @@ MyNumber::MyNumber(int a, int b, int c)
 void MyNumber::display()
 {
     this->average = ((this->a + this->b + this->c) / 3);
-<<<<<<< HEAD
+
     cout << "Average:" << this->average << endl;
 }
 int main()
 {
-    MyNumber b;
-=======
-    cout << "Average:" << this->average;
-}
-int main()
-{
->>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
     cout << "Enter three numbers:";
     int n1, n2, n3;
     cin >> n1 >> n2 >> n3;
     MyNumber a(n1, n2, n3);
-<<<<<<< HEAD
-    MyNumber c;
-=======
->>>>>>> d0af5042db75feed30c3349c618ff23d15bc4996
     a.display();
-    b.display();
-    c.display();
     getch();
     return 0;
 }
